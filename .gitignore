@@ -1,0 +1,65 @@
+# Large neuroimaging data
+*.nii
+*.nii.gz
+*.mif
+*.tck
+*.trk
+*.BRIK
+*.HEAD
+*.mgz
+*.mgh
+*.gii
+*.surf
+*.annot
+
+# AFNI files
+*.1D
+*.BRIK.gz
+
+# FreeSurfer outputs
+subjects/
+
+# Large datasets
+datasets/
+tools/
+*.tar.gz
+*.tar.bz2
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+notebooks/executed/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+.directory
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.cache
