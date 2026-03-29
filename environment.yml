@@ -1,4 +1,4 @@
-name: awesome-neuroscience
+name: hands-on-neuroscience
 channels:
   - conda-forge
   - defaults
