@@ -45,7 +45,7 @@ This list is a **hands-on collection**: every notebook is a runnable, end-to-end
 - Python 3.10+
 - JupyterLab
 - ~2 GB free disk space for sample datasets (downloaded automatically by the notebooks)
-- For neuroimaging CLI notebooks (09, 10, 11): [FSL](https://fsl.fmrib.ox.ac.uk/fsl/), [AFNI](https://afni.nimh.nih.gov/), or [MRtrix3](https://www.mrtrix.org/) installed on your system
+- For neuroimaging CLI notebooks (09, 10, 11): FSL, AFNI, or MRtrix3 installed on your system (links in the Software Tools section below)
 
 Notebooks 01, 02, 05, and 14 are beginner-friendly (basic Python/NumPy). Notebooks 03, 04, 06, 08, and 15 are intermediate (linear algebra, signal processing). Notebooks 07, 09, 10, 11, 12, and 13 are advanced (neuroimaging concepts, CLI tools, deep learning).
 
