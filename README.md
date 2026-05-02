@@ -1,6 +1,6 @@
 # Awesome Hands-on Neuroscience [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> Executable Jupyter notebooks and curated resources to learn neuroscience by doing — from spiking neurons to whole-brain imaging and deep learning on brain data.
+> Practical neuroscience research methods explored through executable code — from spiking neurons to whole-brain imaging and deep learning on brain data.
 
 This repository contains **15 ready-to-run Jupyter notebooks** covering spiking neural networks, whole-brain imaging, electrophysiology, and deep learning on brain data, alongside a curated list of the best open resources in the field.
 
