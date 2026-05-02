@@ -35,8 +35,11 @@ dependencies:
   - pip:
     - brian2>=2.7
     - neurolib>=0.6
+    - neuron>=8.2        # required by netpyne; pip-installable on Linux/macOS
     - netpyne>=1.0
     - antspyx>=0.4
     - pybids>=0.16
     - neuromaps>=0.0.5
-    - datalad>=0.19
+    - datalad>=0.19      # also needs git-annex from your system package manager
+    - torch>=2.0         # notebooks 12 & 13 only (~1 GB)
+    - torch-geometric>=2.4

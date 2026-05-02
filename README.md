@@ -2,14 +2,22 @@
 
 > Executable Jupyter notebooks and curated resources to learn neuroscience by doing — from spiking neurons to whole-brain imaging and deep learning on brain data.
 
-This repository contains **15 ready-to-run Jupyter notebooks** covering everything from spiking neural networks to deep learning on brain data, plus a curated list of the best open resources in the field.
+This repository contains **15 ready-to-run Jupyter notebooks** covering spiking neural networks, whole-brain imaging, electrophysiology, and deep learning on brain data, alongside a curated list of the best open resources in the field.
 
 **Who is this for?** Students, early-career researchers, and anyone curious about how we study the brain with code. No neuroscience background required for the introductory notebooks — just Python and curiosity.
+
+**How is this different from other Awesome lists?**
+
+- **[Awesome Neuroscience](https://github.com/analyticalmonk/awesome-neuroscience)** — a directory of neuroscience libraries and learning resources across multiple languages. No executable code.
+- **[Awesome Computational Neuroscience](https://github.com/eselkin/awesome-computational-neuroscience)** — a directory of researchers and graduate programs worldwide. No tutorials or tools.
+
+This list is a **hands-on collection**: every notebook is a runnable, end-to-end workflow covering a complete analysis — not just a link to an external tool.
 
 ---
 
 ## Contents
 
+- [Getting Started](#getting-started)
 - [Notebooks](#notebooks)
   - [Computational Neuroscience](#computational-neuroscience)
   - [Structural Neuroimaging](#structural-neuroimaging)
@@ -18,7 +26,6 @@ This repository contains **15 ready-to-run Jupyter notebooks** covering everythi
   - [Electrophysiology](#electrophysiology)
   - [Deep Learning & AI](#deep-learning--ai)
   - [Data Standards & Workflows](#data-standards--workflows)
-- [Getting Started](#getting-started)
 - [Curated Resources](#curated-resources)
   - [Learning Platforms & Courses](#learning-platforms--courses)
   - [Textbooks (Free)](#textbooks-free)
@@ -28,6 +35,51 @@ This repository contains **15 ready-to-run Jupyter notebooks** covering everythi
   - [Community](#community)
   - [Key Papers](#key-papers)
 - [Attribution](#attribution)
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.10+
+- JupyterLab
+- ~2 GB free disk space for sample datasets (downloaded automatically by the notebooks)
+- For neuroimaging CLI notebooks (09, 10, 11): [FSL](https://fsl.fmrib.ox.ac.uk/fsl/), [AFNI](https://afni.nimh.nih.gov/), or [MRtrix3](https://www.mrtrix.org/) installed on your system
+
+Notebooks 01, 02, 05, and 14 are beginner-friendly (basic Python/NumPy). Notebooks 03, 04, 06, 08, and 15 are intermediate (linear algebra, signal processing). Notebooks 07, 09, 10, 11, 12, and 13 are advanced (neuroimaging concepts, CLI tools, deep learning).
+
+### Quick Setup
+
+```bash
+# Clone the repo
+git clone https://github.com/cYoren/awesome-hands-on-neuroscience.git
+cd awesome-hands-on-neuroscience
+
+# Option A: pip
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+# Option B: conda
+conda env create -f environment.yml
+conda activate hands-on-neuroscience
+
+# Launch
+jupyter lab notebooks/
+```
+
+> **Note — system dependencies:** Notebooks 04 (NetPyNE) installs NEURON automatically via pip on Linux/macOS. Notebooks 09 (FSL), 10 (AFNI), and 11 (MRtrix3) require those CLI tools to be pre-installed on your system; see each tool's official installation guide. The `datalad` package (notebook 14) additionally requires `git-annex` from your system package manager (`apt install git-annex` / `brew install git-annex`).
+
+> **Note — deep learning:** Notebooks 12 and 13 require PyTorch and PyTorch Geometric. These are included in `requirements.txt` but are large downloads (~1 GB). If you only need the other notebooks, you can skip them: comment out the `torch` lines in `requirements.txt` before running `pip install`.
+
+### Download Sample Data (Optional)
+
+Notebooks download the data they need automatically. To pre-fetch everything at once:
+
+```bash
+bash scripts/setup_data.sh --all
+```
 
 ---
 
@@ -73,42 +125,6 @@ Each notebook is self-contained with setup instructions, inline explanations, an
 
 ---
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.10+
-- JupyterLab
-- ~2 GB free disk space for sample datasets (downloaded automatically by the notebooks)
-- For neuroimaging CLI notebooks (09, 10, 11): FSL, AFNI, or MRtrix3 installed on your system
-
-Notebooks 01, 02, 05, and 14 are beginner-friendly (basic Python/NumPy). Notebooks 03, 04, 06, 08, and 15 are intermediate (linear algebra, signal processing). Notebooks 07, 09, 10, 11, 12, and 13 are advanced (neuroimaging concepts, CLI tools, deep learning).
-
-### Quick setup
-
-```bash
-# Clone the repo
-git clone https://github.com/cYoren/awesome-hands-on-neuroscience.git
-cd awesome-hands-on-neuroscience
-
-# Option A: pip
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-
-# Option B: conda
-conda env create -f environment.yml
-conda activate hands-on-neuroscience
-
-# Download sample data (optional — notebooks download what they need)
-bash scripts/setup_data.sh --all
-
-# Launch
-jupyter lab notebooks/
-```
-
----
-
 ## Curated Resources
 
 ### Learning Platforms & Courses
@@ -130,9 +146,8 @@ jupyter lab notebooks/
 - [Neuroimaging Analysis Methods](https://textbook.nipraxis.org/) - Hands-on neuroimaging with Python, from the Nipraxis project.
 - [Neuroscience Online](https://nba.uth.tmc.edu/neuroscience/) - UTHealth open-access neuroscience textbook covering all major systems.
 - [Neuronal Dynamics](https://neuronaldynamics.epfl.ch/) - Computational and theoretical neuroscience by Gerstner et al. at EPFL.
-- [Theoretical Neuroscience](http://www.gatsby.ucl.ac.uk/~lmate/biblio/dayan_abbott.pdf) - Classic graduate-level textbook by Dayan and Abbott.
+- [Theoretical Neuroscience](https://mitpress.mit.edu/9780262541855/theoretical-neuroscience/) - Classic graduate-level textbook by Dayan and Abbott (MIT Press; free PDF available from the authors).
 - [Spiking Neuron Models](https://lcnwww.epfl.ch/gerstner/SPNM/SPNM.html) - Mathematical treatment of spiking neurons by Gerstner and Kistler.
-- [Principles of Neural Design](https://mitpress.mit.edu/books/principles-neural-design) - Biophysical constraints on neural circuit design by Sterling and Laughlin.
 
 ### Software Tools
 
@@ -189,7 +204,7 @@ jupyter lab notebooks/
 - [Desikan-Killiany](https://surfer.nmr.mgh.harvard.edu/fswiki/CorticalParcellation) - FreeSurfer's default 68-region cortical parcellation.
 - [Destrieux 2009](https://surfer.nmr.mgh.harvard.edu/fswiki/DestrieuxAtlasChanges) - Sulcal-based 148-region cortical atlas included with FreeSurfer.
 - [Yeo 2011](https://surfer.nmr.mgh.harvard.edu/fswiki/CorticalParcellation_Yeo2011) - 7 and 17 resting-state network parcellations of the cerebral cortex.
-- [MSDL](https://team.inria.fr/parietal/18-2/spatial_patterns/spatial-patterns-in-resting-state/) - Multi-subject dictionary learning probabilistic atlas for resting-state fMRI.
+- [MSDL](https://team.inria.fr/parietal/research/spatial_patterns/spatial-patterns-in-resting-state/) - Multi-subject dictionary learning probabilistic atlas for resting-state fMRI.
 - [Brodmann Areas](https://en.wikipedia.org/wiki/Brodmann_area) - Classic cytoarchitectonic regions still widely used in cognitive neuroscience.
 - [Brainnetome](https://atlas.brainnetome.org/) - Connectivity-based parcellation with 246 cortical and subcortical regions.
 - [Melbourne Subcortical Atlas](https://github.com/yetianmed/subcortex) - Fine-grained 5-scale parcellation of subcortical structures.
@@ -205,34 +220,34 @@ jupyter lab notebooks/
 
 ### Key Papers
 
-These papers shaped the methods used in this repository:
+These papers shaped the methods used in this repository.
 
 #### Reviews & Foundational
 
-- Hodgkin, A.L. & Huxley, A.F. (1952). A quantitative description of membrane current and its application to conduction and excitation in nerve. *J. Physiol.*, 117(4), 500-544.
-- Friston, K.J. (1994). Functional and effective connectivity in neuroimaging: A synthesis. *Human Brain Mapping*, 2(1-2), 56-78.
-- Logothetis, N.K. (2008). What we can do and what we cannot do with fMRI. *Nature*, 453, 869-878.
-- Sporns, O. (2011). The human connectome: a complex network. *Annals of the New York Academy of Sciences*, 1224(1), 109-125.
+- [A quantitative description of membrane current and its application to conduction and excitation in nerve](https://doi.org/10.1113/jphysiol.1952.sp004764) - Hodgkin & Huxley (1952). The mathematical model of action potential generation. *J. Physiol.*, 117(4), 500–544.
+- [Functional and effective connectivity in neuroimaging: A synthesis](https://doi.org/10.1002/hbm.460020107) - Friston (1994). Foundational framework for brain connectivity analysis. *Human Brain Mapping*, 2(1–2), 56–78.
+- [What we can do and what we cannot do with fMRI](https://doi.org/10.1038/nature06976) - Logothetis (2008). Critical review of fMRI's scope and limitations. *Nature*, 453, 869–878.
+- [The human connectome: a complex network](https://doi.org/10.1111/j.1749-6632.2010.05888.x) - Sporns (2011). Overview of graph-theoretic approaches to brain connectivity. *Ann. N.Y. Acad. Sci.*, 1224(1), 109–125.
 
 #### Methods
 
-- Smith, S.M. et al. (2004). Advances in functional and structural MR image analysis and implementation as FSL. *NeuroImage*, 23(S1), 208-219.
-- Avants, B.B. et al. (2011). A reproducible evaluation of ANTs similarity metric performance in brain image registration. *NeuroImage*, 54(3), 2033-2044.
-- Tournier, J.-D. et al. (2019). MRtrix3: A fast, flexible and open software framework for medical image processing. *NeuroImage*, 202, 116137.
-- Gramfort, A. et al. (2013). MEG and EEG data analysis with MNE-Python. *Frontiers in Neuroscience*, 7, 267.
-- Gorgolewski, K.J. et al. (2016). The brain imaging data structure (BIDS). *Scientific Data*, 3, 160044.
+- [Advances in functional and structural MR image analysis and implementation as FSL](https://doi.org/10.1016/j.neuroimage.2004.07.051) - Smith et al. (2004). *NeuroImage*, 23(S1), 208–219.
+- [A reproducible evaluation of ANTs similarity metric performance in brain image registration](https://doi.org/10.1016/j.neuroimage.2010.09.025) - Avants et al. (2011). *NeuroImage*, 54(3), 2033–2044.
+- [MRtrix3: A fast, flexible and open software framework for medical image processing](https://doi.org/10.1016/j.neuroimage.2019.116137) - Tournier et al. (2019). *NeuroImage*, 202, 116137.
+- [MEG and EEG data analysis with MNE-Python](https://doi.org/10.3389/fnins.2013.00267) - Gramfort et al. (2013). *Front. Neurosci.*, 7, 267.
+- [The brain imaging data structure (BIDS)](https://doi.org/10.1038/sdata.2016.44) - Gorgolewski et al. (2016). *Sci. Data*, 3, 160044.
 
 #### Parcellations & Atlases
 
-- Schaefer, A. et al. (2018). Local-global parcellation of the human cerebral cortex. *Cerebral Cortex*, 28(9), 3095-3114.
-- Yeo, B.T. et al. (2011). The organization of the human cerebral cortex estimated by intrinsic functional connectivity. *J. Neurophysiol.*, 106(3), 1125-1165.
-- Glasser, M.F. et al. (2016). A multi-modal parcellation of human cerebral cortex. *Nature*, 536, 171-178.
+- [Local-global parcellation of the human cerebral cortex](https://doi.org/10.1093/cercor/bhx179) - Schaefer et al. (2018). *Cereb. Cortex*, 28(9), 3095–3114.
+- [The organization of the human cerebral cortex estimated by intrinsic functional connectivity](https://doi.org/10.1152/jn.00338.2011) - Yeo et al. (2011). *J. Neurophysiol.*, 106(3), 1125–1165.
+- [A multi-modal parcellation of human cerebral cortex](https://doi.org/10.1038/nature18933) - Glasser et al. (2016). *Nature*, 536, 171–178.
 
 #### Deep Learning in Neuroscience
 
-- Haxby, J.V. et al. (2001). Distributed and overlapping representations of faces and objects in ventral temporal cortex. *Science*, 293(5539), 2425-2430.
-- Markello, R.D. et al. (2022). neuromaps: structural and functional interpretation of brain maps. *Nature Methods*, 19, 1472-1479.
-- Scarselli, F. et al. (2009). The graph neural network model. *IEEE Trans. Neural Networks*, 20(1), 61-80.
+- [Distributed and overlapping representations of faces and objects in ventral temporal cortex](https://doi.org/10.1126/science.1063736) - Haxby et al. (2001). Canonical fMRI decoding dataset used in notebook 02 and 12. *Science*, 293(5539), 2425–2430.
+- [neuromaps: structural and functional interpretation of brain maps](https://doi.org/10.1038/s41592-022-01625-w) - Markello et al. (2022). *Nat. Methods*, 19, 1472–1479.
+- [The graph neural network model](https://doi.org/10.1109/TNN.2008.2005605) - Scarselli et al. (2009). *IEEE Trans. Neural Netw.*, 20(1), 61–80.
 
 ---
 
