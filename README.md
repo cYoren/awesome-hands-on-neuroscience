@@ -18,7 +18,6 @@ This repository contains **15 ready-to-run Jupyter notebooks** covering everythi
   - [Electrophysiology](#electrophysiology)
   - [Deep Learning & AI](#deep-learning--ai)
   - [Data Standards & Workflows](#data-standards--workflows)
-- [Getting Started](#getting-started)
 - [Curated Resources](#curated-resources)
   - [Learning Platforms & Courses](#learning-platforms--courses)
   - [Textbooks (Free)](#textbooks-free)
@@ -27,7 +26,6 @@ This repository contains **15 ready-to-run Jupyter notebooks** covering everythi
   - [Atlases & Parcellations](#atlases--parcellations)
   - [Community](#community)
   - [Key Papers](#key-papers)
-- [Attribution](#attribution)
 
 ---
 
@@ -70,42 +68,6 @@ Each notebook is self-contained with setup instructions, inline explanations, an
 
 - [BIDS & Data Conversion](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/14_bids_pybids_dcm2niix.ipynb) - Query BIDS datasets programmatically and convert DICOM to NIfTI using PyBIDS and dcm2niix.
 - [Brain Annotation Maps](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/15_neuromaps_brain_annotations.ipynb) - Map brain statistics onto surfaces, compare against receptor and gene expression atlases, and run spin tests using Neuromaps.
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.10+
-- JupyterLab
-- ~2 GB free disk space for sample datasets (downloaded automatically by the notebooks)
-- For neuroimaging CLI notebooks (09, 10, 11): FSL, AFNI, or MRtrix3 installed on your system
-
-Notebooks 01, 02, 05, and 14 are beginner-friendly (basic Python/NumPy). Notebooks 03, 04, 06, 08, and 15 are intermediate (linear algebra, signal processing). Notebooks 07, 09, 10, 11, 12, and 13 are advanced (neuroimaging concepts, CLI tools, deep learning).
-
-### Quick setup
-
-```bash
-# Clone the repo
-git clone https://github.com/cYoren/awesome-hands-on-neuroscience.git
-cd awesome-hands-on-neuroscience
-
-# Option A: pip
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-
-# Option B: conda
-conda env create -f environment.yml
-conda activate hands-on-neuroscience
-
-# Download sample data (optional — notebooks download what they need)
-bash scripts/setup_data.sh --all
-
-# Launch
-jupyter lab notebooks/
-```
 
 ---
 
@@ -236,19 +198,48 @@ These papers shaped the methods used in this repository:
 
 ---
 
-## Attribution
+## Footnotes
+
+### Getting Started
+
+**Prerequisites**
+
+- Python 3.10+
+- JupyterLab
+- ~2 GB free disk space for sample datasets (downloaded automatically by the notebooks)
+- For neuroimaging CLI notebooks (09, 10, 11): FSL, AFNI, or MRtrix3 installed on your system
+
+Notebooks 01, 02, 05, and 14 are beginner-friendly (basic Python/NumPy). Notebooks 03, 04, 06, 08, and 15 are intermediate (linear algebra, signal processing). Notebooks 07, 09, 10, 11, 12, and 13 are advanced (neuroimaging concepts, CLI tools, deep learning).
+
+**Quick setup**
+
+```bash
+# Clone the repo
+git clone https://github.com/cYoren/awesome-hands-on-neuroscience.git
+cd awesome-hands-on-neuroscience
+
+# Option A: pip
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# Option B: conda
+conda env create -f environment.yml
+conda activate hands-on-neuroscience
+
+# Download sample data (optional — notebooks download what they need)
+bash scripts/setup_data.sh --all
+
+# Launch
+jupyter lab notebooks/
+```
+
+### Attribution
 
 All datasets, tools, and resources used in this repository are properly cited in [ATTRIBUTION.md](ATTRIBUTION.md). We are grateful to the open-science neuroscience community for making this work possible.
 
 If you use these materials in your research or teaching, please cite the original authors of the tools and datasets (see ATTRIBUTION.md) and link back to this repository.
 
----
+### Contributing
 
-## Contributing
-
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
-
-- Suggesting new resources.
-- Adding tutorial notebooks.
-- Fixing errors.
-- Improving documentation.
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on suggesting new resources, adding tutorial notebooks, fixing errors, and improving documentation.
