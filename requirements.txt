@@ -1,5 +1,13 @@
-# Awesome Neuroscience - Python Dependencies
+# Awesome Hands-on Neuroscience - Python Dependencies
 # Install with: pip install -r requirements.txt
+#
+# System dependencies required for some notebooks:
+#   - Notebooks 09 (FSL), 10 (AFNI), 11 (MRtrix3): install those CLI tools from their official sites
+#   - Notebook 14 (BIDS/datalad): requires git-annex (apt install git-annex / brew install git-annex)
+#
+# Heavy packages (notebooks 12 & 13 only):
+#   torch, torch-geometric, and torch-scatter are ~1 GB combined.
+#   Comment them out if you only need the other notebooks.
 
 # Core scientific stack
 numpy>=1.24
@@ -25,12 +33,12 @@ mne>=1.6
 # Computational neuroscience
 brian2>=2.7
 neurolib>=0.6
+neuron>=8.2          # required by netpyne; pip-installable on Linux/macOS
 netpyne>=1.0
 
-# Deep learning (optional - uncomment as needed)
-# torch>=2.0
-# tensorflow>=2.14
-# torch-geometric>=2.4
+# Deep learning (notebooks 12 & 13)
+torch>=2.0
+torch-geometric>=2.4
 
 # Graph analysis
 networkx>=3.0
@@ -39,7 +47,7 @@ networkx>=3.0
 antspyx>=0.4
 
 # Data management
-datalad>=0.19
+datalad>=0.19        # also needs git-annex from your system package manager
 
 # Utilities
 tqdm>=4.65
