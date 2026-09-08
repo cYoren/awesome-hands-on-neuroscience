@@ -119,7 +119,18 @@ This educational repository builds upon the incredible work of many open-source 
 - **Website**: https://www.datalad.org/
 - **License**: [MIT](https://opensource.org/licenses/MIT)
 - **Citation**: Halchenko, Y.O., Meyer, K., Poldrack, B., et al. (2021). DataLad: distributed system for joint management of code, data, and their relationship. *Journal of Open Source Software*, 6(63), 3262.
-- **Used in**: Notebook 14, data management
+- **Used in**: Notebook 14
+
+### Modern Neuroscience Data Libraries
+
+- **neuPrint Python** — https://connectome-neuprint.github.io/neuprint-python/; used in Notebook 16. Cite Clements, J. et al. (2020), *eLife*, 9, e57443, and follow the selected neuPrint dataset's access and citation guidance.
+- **CAVEclient** — https://caveclient.readthedocs.io/; used in Notebook 17. Software and service are subject to the MICrONS/CAVE access terms; cite the selected materialization and Turner, N.L. et al. (2022), *Cell*, 185(6), 1082–1100.e24.
+- **ONE / IBL** — https://int-brain-lab.github.io/ONE/; used in Notebook 18. Cite the selected IBL release and follow its data-access terms.
+- **CEBRA** — https://cebra.ai/; used in Notebook 19. Citation: Schneider, S., Lee, J.H., Mathis, M.W., & Mathis, A. (2023). Learnable latent embeddings for joint behavioral and neural analysis. *Nature*, 617, 360–368.
+- **Allen `abc_atlas_access`** — https://alleninstitute.github.io/abc_atlas_access/; used in Notebook 20. Follow the current Allen Brain Cell Atlas data license and cite the specific dataset/release.
+- **PyNWB and DANDI** — https://pynwb.readthedocs.io/ and https://dandiarchive.org/; used in Notebooks 21 and 22. Cite Teeters, J.L. et al. (2015), *Neuron*, 88(4), 629–634, plus the selected dandiset and its license.
+- **FALCON Challenge** — https://github.com/snel-repo/falcon-challenge; introduced in Notebook 22. Follow the benchmark's current data-access, license, and citation guidance.
+- **POYO** — https://poyo-brain.github.io/; introduced in Notebook 23. Follow the project and any selected checkpoint/dataset's current license and citation guidance.
 
 ---
 
@@ -203,6 +214,36 @@ This educational repository builds upon the incredible work of many open-source 
 - **Source**: https://afni.nimh.nih.gov/pub/dist/edu/data/
 - **License**: Public domain (US government work)
 - **Citation**: Cox, R.W., & Hyde, J.S. (1997). Software tools for analysis and visualization of fMRI data. *NMR in Biomedicine*, 10(4-5), 171-178.
+
+### Connectomics, Electrophysiology, and Cellular Resources
+
+#### MaleCNS / neuPrint
+- **Source**: https://male-cns.janelia.org/ and https://neuprint.janelia.org/
+- **Used in**: Notebook 16 (live access is opt-in; default graph is synthetic)
+- **License and citation**: Dataset terms, acknowledgment, and citation requirements are release-specific. Consult the MaleCNS download page before using or redistributing queried data.
+
+#### MICrONS
+- **Source**: https://www.microns-explorer.org/
+- **Used in**: Notebook 17 (live access is opt-in; default data are synthetic)
+- **Citation**: Turner, N.L., Macrina, T., Bae, J.A., et al. (2022). Reconstruction of neocortex: Organelles, compartments, cells, circuits, and activity. *Cell*, 185(6), 1082–1100.e24.
+- **License and access**: Follow the selected CAVE datastack/materialization's current access terms and citation guidance.
+
+#### International Brain Laboratory Brain-wide Map
+- **Source**: https://www.internationalbrainlab.com/data
+- **Used in**: Notebook 18 (live access is opt-in; default spikes/trials are synthetic)
+- **Citation**: International Brain Laboratory et al. (2025). Brain-wide map of neural activity during decision making. *Nature*, 638, 112–122.
+- **License and access**: Follow IBL's current data-access terms and cite the release used.
+
+#### Allen Brain Cell Atlas
+- **Source**: https://atlas.brain-map.org/
+- **Used in**: Notebook 20 (official download is opt-in; default cells are synthetic)
+- **Citation**: Yao, Z., van Velthoven, C.T.J., Nguyen, T.N., et al. (2021). A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation. *Cell*, 184(12), 3222–3241.e26.
+- **License and access**: Follow the current dataset/release license and cite the precise atlas resource used.
+
+#### DANDI Archive / NWB
+- **Source**: https://dandiarchive.org/ and https://www.nwb.org/
+- **Used in**: Notebooks 21 (a user-selected public asset is streamed; default example is synthetic) and 22 (FALCON orientation only; default example is synthetic)
+- **License and access**: Every dandiset has its own license and citation requirements; inspect these before use.
 
 ---
 

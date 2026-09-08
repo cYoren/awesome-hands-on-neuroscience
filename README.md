@@ -2,7 +2,7 @@
 
 > Practical neuroscience research methods explored through executable code — from spiking neurons to whole-brain imaging and deep learning on brain data.
 
-This repository contains **15 ready-to-run Jupyter notebooks** covering spiking neural networks, whole-brain imaging, electrophysiology, and deep learning on brain data, alongside a curated list of the best open resources in the field.
+This repository contains **23 ready-to-run Jupyter notebooks** covering spiking neural networks, modern connectomics, brain-wide electrophysiology, cellular atlases, whole-brain imaging, and deep learning on brain data, alongside a curated list of the best open resources in the field.
 
 **Who is this for?** Students, early-career researchers, and anyone curious about how we study the brain with code. No neuroscience background required for the introductory notebooks — just Python and curiosity.
 
@@ -13,17 +13,42 @@ This repository contains **15 ready-to-run Jupyter notebooks** covering spiking 
 
 This list is a **hands-on collection**: every notebook is a runnable, end-to-end workflow covering a complete analysis — not just a link to an external tool.
 
+## Start Here: no neuroscience or coding background required
+
+**First lesson (about 20 minutes):** start with [BCI Neural Decoding](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/22_bci_neural_decoding.ipynb). It creates its own small dataset—no account, download, or brain-data file needed. Install only the lightweight starter tools, open the notebook, then use **Run All** / run cells from top to bottom:
+
+```bash
+python -m pip install jupyterlab numpy matplotlib scikit-learn
+jupyter lab notebooks/22_bci_neural_decoding.ipynb
+```
+
+Each new notebook identifies a **default path** that works locally and an **optional real-data path**. Complete the default path first; live datasets may require an account, internet access, acceptance of data terms, or a larger download.
+
+**No local Python yet?** Create a GitHub Codespace from the repository's **Code** menu, run the same two commands in its terminal, and open the notebook in the browser. This avoids installing Python on your own computer.
+
+### Suggested learning route
+
+1. **First code and decoding:** 22 BCI Neural Decoding → 23 Neural Foundation Models.
+2. **Neural populations:** 19 CEBRA Neural Manifolds → 18 IBL Brain-wide Neuropixels.
+3. **Circuits and cells:** 16 Fly Connectome → 17 MICrONS → 20 Allen Spatial Transcriptomics.
+4. **Real data infrastructure:** 21 DANDI & NWB Streaming, then BIDS (14).
+
 ---
 
 ## Contents
 
 - [Getting Started](#getting-started)
+- [Start Here](#start-here-no-neuroscience-or-coding-background-required)
+  - [Suggested Learning Route](#suggested-learning-route)
 - [Notebooks](#notebooks)
   - [Computational Neuroscience](#computational-neuroscience)
+  - [Connectomics & Circuit Neuroscience](#connectomics--circuit-neuroscience)
   - [Structural Neuroimaging](#structural-neuroimaging)
   - [Functional Neuroimaging](#functional-neuroimaging)
   - [Diffusion & Tractography](#diffusion--tractography)
   - [Electrophysiology](#electrophysiology)
+  - [Neural Representation Learning](#neural-representation-learning)
+  - [Molecular & Cellular Neuroscience](#molecular--cellular-neuroscience)
   - [Deep Learning & AI](#deep-learning--ai)
   - [Data Standards & Workflows](#data-standards--workflows)
 - [Curated Resources](#curated-resources)
@@ -92,6 +117,11 @@ Each notebook is self-contained with setup instructions, inline explanations, an
 - [Whole-Brain Modeling](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/03_neurolib_wholebrain.ipynb) - Run an 80-region whole-brain model (ALN neural mass), simulate BOLD, and compare to empirical HCP data using Neurolib.
 - [Cortical Column Simulation](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/04_netpyne_cortical_column.ipynb) - Build a multi-population cortical microcircuit with Hodgkin-Huxley neurons using NetPyNE and NEURON.
 
+### Connectomics & Circuit Neuroscience
+
+- [Fly neuPrint Structural Paths](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/16_fly_complete_cns_connectome.ipynb) - Explore directed sensory-to-descending circuit paths, network structure, and virtual lesions with an accessible neuPrint dataset (including MaleCNS where authorized) or a small runnable example.
+- [MICrONS Functional Connectomics](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/17_microns_functional_connectomics.ipynb) - Test the relationship between visual-response similarity and reconstructed synaptic connectivity with CAVE/MICrONS-style data.
+
 ### Structural Neuroimaging
 
 - [Atlas Exploration](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/05_mri_atlas_exploration.ipynb) - Load and visualize MNI152, Schaefer, Yeo, and Destrieux atlases; extract region time series; compute FC matrices using NiBabel and Nilearn.
@@ -111,16 +141,28 @@ Each notebook is self-contained with setup instructions, inline explanations, an
 ### Electrophysiology
 
 - [MEG/EEG Analysis](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/06_mne_meg_eeg_analysis.ipynb) - Load MEG/EEG, epoch events, compute ERPs, time-frequency decomposition (Morlet), and dSPM source localization using MNE-Python.
+- [IBL Brain-wide Neuropixels](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/18_ibl_brainwide_neuropixels.ipynb) - Build peri-event firing-rate summaries and leakage-aware choice decoders for brain-wide single-unit recordings.
+
+### Neural Representation Learning
+
+- [CEBRA Neural Manifolds](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/19_cebra_neural_manifolds.ipynb) - Compare PCA, UMAP, and behavior-conditioned CEBRA embeddings, then decode position from neural population activity.
+
+### Molecular & Cellular Neuroscience
+
+- [Allen Spatial Transcriptomics](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/20_allen_spatial_transcriptomics.ipynb) - Explore spatial cell metadata and marker-gene expression with the Allen Brain Cell Atlas access tools and a lightweight example.
 
 ### Deep Learning & AI
 
 - [Brain Decoding with Deep Learning](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/12_deep_learning_brain_decoding.ipynb) - Train a CNN to decode visual categories from fMRI and compare to an SVM baseline using PyTorch and Nilearn.
 - [Graph Neural Networks on Connectomes](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/13_graph_neural_networks_connectome.ipynb) - Model the brain as a graph and build a Graph Attention Network for subject classification using PyTorch Geometric.
+- [BCI Neural Decoding](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/22_bci_neural_decoding.ipynb) - **Start here:** decode synthetic spike counts into hand velocity with a plain NumPy Ridge decoder, then learn how FALCON/DANDI benchmarks extend the idea.
+- [Neural Foundation Models](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/23_neural_foundation_models.ipynb) - **Start here after 22:** compare simple within-session and pooled models on an unseen-session/unseen-stimulus prediction task, then orient to pretrained neural models.
 
 ### Data Standards & Workflows
 
 - [BIDS & Data Conversion](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/14_bids_pybids_dcm2niix.ipynb) - Query BIDS datasets programmatically and convert DICOM to NIfTI using PyBIDS and dcm2niix.
 - [Brain Annotation Maps](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/15_neuromaps_brain_annotations.ipynb) - Map brain statistics onto surfaces, compare against receptor and gene expression atlases, and run spin tests using Neuromaps.
+- [DANDI & NWB Remote Streaming](https://github.com/cYoren/awesome-hands-on-neuroscience/blob/main/notebooks/21_dandi_nwb_streaming.ipynb) - Discover a public NWB asset through DANDI, inspect it with HTTP range reads, and use bounded data slices without a full download.
 
 ---
 
@@ -171,6 +213,11 @@ Each notebook is self-contained with setup instructions, inline explanations, an
 - [Brainspace](https://brainspace.readthedocs.io/) - Gradient analysis of brain connectivity and cortical organization.
 - [NetNeuroTools](https://netneurotools.readthedocs.io/) - Utilities for network neuroscience and connectome analysis.
 - [NiMARE](https://nimare.readthedocs.io/) - Neuroimaging meta-analysis in Python.
+- [neuPrint Python](https://connectome-neuprint.github.io/neuprint-python/) - Query connectome annotations and connectivity from neuPrint services.
+- [CAVEclient](https://caveclient.readthedocs.io/) - Access chunked EM, segmentation, and annotation data including MICrONS.
+- [ONE](https://int-brain-lab.github.io/ONE/) - Programmatic access to International Brain Laboratory data.
+- [CEBRA](https://cebra.ai/) - Contrastive representation learning for behavioral and neural data.
+- [PyNWB](https://pynwb.readthedocs.io/) and [DANDI](https://www.dandiarchive.org/) - Create, read, and discover Neurodata Without Borders datasets.
 
 #### Computational Neuroscience Simulators
 
@@ -193,6 +240,13 @@ Each notebook is self-contained with setup instructions, inline explanations, an
 - [INDI](http://fcon_1000.projects.nitrc.org/) - International Neuroimaging Data-sharing Initiative for resting-state fMRI.
 - [PhysioNet](https://physionet.org/) - Physiological and clinical signal datasets including EEG and ECG.
 - [CRCNS](https://crcns.org/) - Collaborative Research in Computational Neuroscience data repository.
+- [MaleCNS Connectome](https://male-cns.janelia.org/) - Whole-central-nervous-system Drosophila connectivity data and neuPrint access.
+- [MICrONS Explorer](https://www.microns-explorer.org/) - Mouse visual-cortex functional-connectomics data and tutorials.
+- [IBL Brain-wide Map](https://www.internationalbrainlab.com/data) - Standardized, brain-wide Neuropixels recordings during decision making.
+- [Allen Brain Cell Atlas](https://atlas.brain-map.org/) - Single-cell and spatial transcriptomics data across mouse and human brain.
+- [DANDI Archive](https://dandiarchive.org/) - Open archive for neurophysiology data in NWB.
+- [FALCON Challenge](https://github.com/snel-repo/falcon-challenge) - Neural-decoding benchmark spanning human, non-human-primate, and songbird recordings.
+- [POYO](https://poyo-brain.github.io/) - A foundation-model direction for neural time series across sessions and tasks.
 
 ### Atlases & Parcellations
 
@@ -247,44 +301,47 @@ These papers shaped the methods used in this repository.
 - [Distributed and overlapping representations of faces and objects in ventral temporal cortex](https://doi.org/10.1126/science.1063736) - Haxby et al. (2001). Canonical fMRI decoding dataset used in notebook 02 and 12. *Science*, 293(5539), 2425–2430.
 - [neuromaps: structural and functional interpretation of brain maps](https://doi.org/10.1038/s41592-022-01625-w) - Markello et al. (2022). *Nat. Methods*, 19, 1472–1479.
 - [The graph neural network model](https://doi.org/10.1109/TNN.2008.2005605) - Scarselli et al. (2009). *IEEE Trans. Neural Netw.*, 20(1), 61–80.
+- Turner, N.L. et al. (2022). Reconstruction of neocortex: Organelles, compartments, cells, circuits, and activity. *Cell*, 185(6), 1082–1100.e24.
+- International Brain Laboratory et al. (2025). Brain-wide map of neural activity during decision making. *Nature*, 638, 112–122.
+- Schneider, S., Lee, J.H., Mathis, M.W., & Mathis, A. (2023). Learnable latent embeddings for joint behavioral and neural analysis. *Nature*, 617, 360–368.
+- Yao, Z. et al. (2021). A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation. *Cell*, 184(12), 3222–3241.e26.
+- Teeters, J.L. et al. (2015). Neurodata Without Borders: Creating a common data format for neurophysiology. *Neuron*, 88(4), 629–634.
+- Wang, S. et al. (2025). Foundation model of neural activity predicts response to new stimulus types. *Nature*. https://doi.org/10.1038/s41586-025-08829-y
 
 ---
 
 ## Footnotes
 
-### Getting Started
+### Full Installation and Notebook Guide
 
-**Prerequisites**
+**Choose a notebook before installing everything.** Notebooks 22 and 23 are the recommended beginner route and need only the small starter install shown above. The full environment supports every notebook but includes large or platform-specific scientific packages.
 
-- Python 3.10+
-- JupyterLab
-- ~2 GB free disk space for sample datasets (downloaded automatically by the notebooks)
-- For neuroimaging CLI notebooks (09, 10, 11): FSL, AFNI, or MRtrix3 installed on your system
+| Route | Notebooks | What you need by default |
+| --- | --- | --- |
+| Beginner | 22, 23 | Python, Jupyter, NumPy, Matplotlib, scikit-learn |
+| Intermediate | 02, 05, 06, 14, 18, 19, 20, 21 | Basic Python; some notebooks use optional downloads or cloud services |
+| Advanced | 03, 04, 07–13, 16, 17 | Domain background and/or specialized system software, deep-learning packages, or real-data service access |
 
-Notebooks 01, 02, 05, and 14 are beginner-friendly (basic Python/NumPy). Notebooks 03, 04, 06, 08, and 15 are intermediate (linear algebra, signal processing). Notebooks 07, 09, 10, 11, 12, and 13 are advanced (neuroimaging concepts, CLI tools, deep learning).
-
-**Quick setup**
+**Full local setup**
 
 ```bash
 # Clone the repo
-git clone https://github.com/cYoren/awesome-hands-on-neuroscience.git
-cd awesome-hands-on-neuroscience
+ git clone https://github.com/cYoren/awesome-hands-on-neuroscience.git
+ cd awesome-hands-on-neuroscience
 
-# Option A: pip
+# Create an isolated Python environment
 python -m venv venv
+# macOS/Linux:
 source venv/bin/activate
-pip install -r requirements.txt
+# Windows PowerShell:
+# .\venv\Scripts\Activate.ps1
 
-# Option B: conda
-conda env create -f environment.yml
-conda activate hands-on-neuroscience
-
-# Download sample data (optional — notebooks download what they need)
-bash scripts/setup_data.sh --all
-
-# Launch
+# Install every notebook dependency
+python -m pip install -r requirements.txt
 jupyter lab notebooks/
 ```
+
+Alternatively, create the Conda environment with `conda env create -f environment.yml`, then run `conda activate hands-on-neuroscience`. Notebooks 09–11 additionally require FSL, AFNI, or MRtrix3 installed on the system. CEBRA requires a PyTorch build compatible with your platform; see its notebook before opting into that path.
 
 ### Attribution
 
